@@ -1,12 +1,14 @@
 
 public class Libro {
-
+    //Atributos de la clase Libro
     private String autor;
     private String titulo;
+    private int numeroPaginas;
 
-    public Libro(String autorLibro, String tituloLibro) {
+    public Libro(String autorLibro, String tituloLibro, int paginas) {
         autor = autorLibro;
         titulo = tituloLibro;
+        numeroPaginas = paginas;
     }
     
     /**
@@ -21,6 +23,13 @@ public class Libro {
      */
     public String getTitulo(){
         return titulo;
+    }
+    
+    /**
+     * Método getter para el número de páginas del libro
+     */
+    public int getNumeroPaginas(){
+        return numeroPaginas;
     }
     
     /**
