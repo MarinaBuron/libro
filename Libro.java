@@ -4,11 +4,13 @@ public class Libro {
     private String autor;
     private String titulo;
     private int numeroPaginas;
+    private String numeroReferencia;
 
     public Libro(String autorLibro, String tituloLibro, int paginas) {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
+        numeroReferencia = "";
     }
     
     /**
@@ -38,6 +40,24 @@ public class Libro {
     public String getDetalles(){
         String detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas;      
         return detalles;
+    }
+    
+    /**
+     * Método getter para obtener el número referencial del libro
+     */
+    public String getNumeroReferencia(){
+        return "";
+    }
+    
+    /**
+     * Método setter para el número referencial del libro
+     */
+    public void setNumeroReferencia(String numRef){
+        if (numRef.length() >= 3){ //length() mide la longitud del String
+            numeroReferencia = numRef;
+        }else{
+            System.out.println("Error al insertar el número de referencia");
+        }
     }
     
     /**
