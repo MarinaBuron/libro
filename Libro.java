@@ -8,4 +8,18 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
     }
+    
+    /**
+     * Método getter para autor
+     */
+    public String getAutor(){
+        return autor;
+    }
+    
+    /**
+     * Método getter para libro
+     */
+    public String getTitulo(){
+        return titulo;
+    }
 }
