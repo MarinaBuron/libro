@@ -33,6 +33,14 @@ public class Libro {
     }
     
     /**
+     * Método getter para los detalles del libro
+     */
+    public String getDetalles(){
+        String detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas;      
+        return detalles;
+    }
+    
+    /**
      * Imprimiendo el nombre del autor
      */
     public void imprimirAutor(){
@@ -44,5 +52,12 @@ public class Libro {
      */
     public void imprimirTitulo(){
         System.out.println("El título del libro es: " + titulo);
+    }
+    
+    /**
+     * Método imprimir los detalles del libro
+     */
+    public void imprimirDetalles(){
+        System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas);
     }
 }
