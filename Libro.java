@@ -5,12 +5,14 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     public Libro(String autorLibro, String tituloLibro, int paginas) {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
+        vecesPrestado = 0;
     }
     
     /**
@@ -40,10 +42,12 @@ public class Libro {
     public String getDetalles(){
         String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
         
-        if (numeroReferencia.length() <= 3){
-            detalles = detalles + " | NºRef:--";
-        }else{
+        if (numeroReferencia.length() > 3){ //Aquí vemos si el número de referencia está configurado
             detalles = detalles + " | NºRef: " + numeroReferencia;
+        }else if (vecesPrestado > 0){ //Aquí vemos si alguna vez se ha prestado un libro
+                detalles = detalles + " | NºRef: " + numeroReferencia + " | NºVeces prestado: " + vecesPrestado;
+            }else{
+                detalles = detalles + " | NºRef:-- | NºVeces prestado: 0";
         }
         return detalles;
     }
@@ -53,6 +57,13 @@ public class Libro {
      */
     public String getNumeroReferencia(){
         return numeroReferencia;
+    }
+    
+    /**
+     * Método getter para vecesPrestado
+     */
+    public int getVecesPrestado(){
+        return vecesPrestado;
     }
     
     /**
@@ -67,6 +78,18 @@ public class Libro {
         
     }
     
+    /**
+     * Método para prestar el libro
+     */
+    public void prestar(){
+        boolean prestado = true;
+        
+        if (prestado == true){
+            vecesPrestado = vecesPrestado + 1;
+        }else{
+            vecesPrestado = 0;
+        }
+    }
     /**
      * Imprimiendo el nombre del autor
      */
@@ -85,10 +108,14 @@ public class Libro {
      * Método imprimir los detalles del libro
      */
     public void imprimirDetalles(){
-        if (numeroReferencia.length() == 0){
-            System.out.println("Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas  + " | NºRef:--");
-        }else{
-            System.out.println("Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas + " | NºRef: " + numeroReferencia);
+        String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
+        
+        if (numeroReferencia.length() >= 3){
+            System.out.println(detalles + " | NºRef: " + numeroReferencia);
+        }else if (vecesPrestado > 0){
+                System.out.println(detalles + " | NºRef: " + numeroReferencia + " | NºVeces prestado: " + vecesPrestado);
+            }else{
+                System.out.println(detalles + " | NºRef:--" + "| NºVeces prestado: 0");
         }
     }
 }
