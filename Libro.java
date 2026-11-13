@@ -38,11 +38,12 @@ public class Libro {
      * Método getter para los detalles del libro
      */
     public String getDetalles(){
-        String detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia;
-        if (numeroReferencia.length() == 0){
-            detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef:-- ";
+        String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
+        
+        if (numeroReferencia.length() <= 3){
+            detalles = detalles + " | NºRef:--";
         }else{
-            detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia;
+            detalles = detalles + " | NºRef: " + numeroReferencia;
         }
         return detalles;
     }
@@ -85,9 +86,9 @@ public class Libro {
      */
     public void imprimirDetalles(){
         if (numeroReferencia.length() == 0){
-            System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas);
+            System.out.println("Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas  + " | NºRef:--");
         }else{
-            System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia);
+            System.out.println("Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas + " | NºRef: " + numeroReferencia);
         }
     }
 }
