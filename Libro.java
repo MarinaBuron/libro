@@ -46,7 +46,7 @@ public class Libro {
      * Método getter para obtener el número referencial del libro
      */
     public String getNumeroReferencia(){
-        return "";
+        return numeroReferencia;
     }
     
     /**
@@ -58,6 +58,7 @@ public class Libro {
         }else{
             System.out.println("Error al insertar el número de referencia");
         }
+        
     }
     
     /**
