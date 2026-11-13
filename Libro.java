@@ -38,7 +38,12 @@ public class Libro {
      * Método getter para los detalles del libro
      */
     public String getDetalles(){
-        String detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas;      
+        String detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia;
+        if (numeroReferencia.length() == 0){
+            detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef:-- ";
+        }else{
+            detalles = "Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia;
+        }
         return detalles;
     }
     
@@ -79,6 +84,10 @@ public class Libro {
      * Método imprimir los detalles del libro
      */
     public void imprimirDetalles(){
-        System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas);
+        if (numeroReferencia.length() == 0){
+            System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas);
+        }else{
+            System.out.println("Título: " + titulo + " | " + "Autor: " + autor + " | " + "Páginas: " + numeroPaginas + " | " + "NºRef: " + numeroReferencia);
+        }
     }
 }
