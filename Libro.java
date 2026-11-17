@@ -6,13 +6,15 @@ public class Libro {
     private int numeroPaginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
 
-    public Libro(String autorLibro, String tituloLibro, int paginas) {
+    public Libro(String autorLibro, String tituloLibro, int paginas, boolean libroTexto) {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginas;
         numeroReferencia = "";
         vecesPrestado = 0;
+        esLibroDeTexto = libroTexto;
     }
     
     /**
@@ -47,7 +49,14 @@ public class Libro {
         }else{ 
             detalles = detalles + " | NºRef:--";
         }
+        
         detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
+        
+        if (esLibroDeTexto == true){
+            detalles = detalles + " | Libro de texto: Sí";
+        }else{
+            detalles = detalles + " | Libro de texto: No";
+        }
         
         return detalles;
     }
@@ -67,6 +76,13 @@ public class Libro {
     }
     
     /**
+     * Método getter para determinar si un libro es libro de texto
+     */
+    public boolean getLibroDeTexto(){
+        return esLibroDeTexto;
+    }
+    
+    /**
      * Método setter para el número referencial del libro
      */
     public void setNumeroReferencia(String numRef){
@@ -82,14 +98,9 @@ public class Libro {
      * Método para prestar el libro
      */
     public void prestar(){
-        boolean prestado = true;
-        
-        if (prestado == true){
-            vecesPrestado = vecesPrestado + 1;
-        }else{
-            vecesPrestado = 0;
-        }
+        vecesPrestado = vecesPrestado + 1;
     }
+    
     /**
      * Imprimiendo el nombre del autor
      */
@@ -117,6 +128,13 @@ public class Libro {
         }
         
         detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
+        
+        if (esLibroDeTexto == true){
+            detalles = detalles + " | Libro de texto: Sí";
+        }else{
+            detalles = detalles + " | Libro de texto: No";
+        }
+        
         System.out.println(detalles);
     }
 }
