@@ -43,10 +43,11 @@ public class Libro {
         String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
         
         if (numeroReferencia.length() > 3){ //Aquí vemos si el número de referencia está configurado
-            detalles = detalles + " | NºRef: " + numeroReferencia + " | Nºveces prestado: " + vecesPrestado;
+            detalles = detalles + " | NºRef: " + numeroReferencia;
         }else{ 
-            detalles = detalles + " | NºRef:--" + " | Nºveces prestado: " + vecesPrestado;
+            detalles = detalles + " | NºRef:--";
         }
+        detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
         
         return detalles;
     }
@@ -110,9 +111,12 @@ public class Libro {
         String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
         
         if (numeroReferencia.length() >= 3){
-            System.out.println(detalles + " | NºRef: " + numeroReferencia + " | Nºveces prestado: " + vecesPrestado);
+            detalles = detalles + " | NºRef: " + numeroReferencia;
         }else{
-            System.out.println(detalles + " | NºRef:--" + " | Nºveces prestado: " + vecesPrestado );
+            detalles = detalles + " | NºRef:--";
         }
+        
+        detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
+        System.out.println(detalles);
     }
 }
