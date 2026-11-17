@@ -1,13 +1,26 @@
-
+/**
+ * Representa a un libro con distintas características
+ * 
+ * @author Marina
+ * @version 1.0
+ */
 public class Libro {
     //Atributos de la clase Libro
-    private String autor;
-    private String titulo;
-    private int numeroPaginas;
-    private String numeroReferencia;
-    private int vecesPrestado;
-    private boolean esLibroDeTexto;
+    private String autor; //Autor de libro
+    private String titulo; //título del libro
+    private int numeroPaginas; //Número de páginas del libro
+    private String numeroReferencia; //Número de referencia del libro
+    private int vecesPrestado; //Las veces que el libro se ha prestado
+    private boolean esLibroDeTexto; //Determina si es un libro de texto 
 
+    /**
+     * @param autor: determina el autor del libro
+     * @param titulo: determina el título del libro
+     * @param paginas: determina las páginas del libro
+     * @param numeroReferencia: determina el número de referencia
+     * @param vecesPrestado: determina las veces que el libro se ha prestado
+     * @param esLibroDeTexto: determina si el libro es de texto
+     */
     public Libro(String autorLibro, String tituloLibro, int paginas, boolean libroTexto) {
         autor = autorLibro;
         titulo = tituloLibro;
@@ -33,6 +46,7 @@ public class Libro {
     
     /**
      * Método getter para el número de páginas del libro
+     * @return el número de páginas asignado
      */
     public int getNumeroPaginas(){
         return numeroPaginas;
@@ -40,6 +54,7 @@ public class Libro {
     
     /**
      * Método getter para los detalles del libro
+     * @return los detalles del libro
      */
     public String getDetalles(){
         String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
@@ -52,7 +67,7 @@ public class Libro {
         
         detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
         
-        if (esLibroDeTexto == true){
+        if (esLibroDeTexto){
             detalles = detalles + " | Libro de texto: Sí";
         }else{
             detalles = detalles + " | Libro de texto: No";
@@ -63,6 +78,7 @@ public class Libro {
     
     /**
      * Método getter para obtener el número referencial del libro
+     * @return el número de referencia del libro, mayor que 3 caracteres
      */
     public String getNumeroReferencia(){
         return numeroReferencia;
@@ -70,6 +86,7 @@ public class Libro {
     
     /**
      * Método getter para vecesPrestado
+     * @return las veces prestado, puede ser 0 o más
      */
     public int getVecesPrestado(){
         return vecesPrestado;
@@ -77,6 +94,7 @@ public class Libro {
     
     /**
      * Método getter para determinar si un libro es libro de texto
+     * @return (@code true) si es de texto, (@code false) si no lo es
      */
     public boolean getLibroDeTexto(){
         return esLibroDeTexto;
@@ -84,6 +102,8 @@ public class Libro {
     
     /**
      * Método setter para el número referencial del libro
+     * @param número de referencia a insertar al invocar el método
+     * Comprueba si el número de referencia es correcto
      */
     public void setNumeroReferencia(String numRef){
         if (numRef.length() >= 3){ //length() mide la longitud del String
@@ -96,6 +116,7 @@ public class Libro {
     
     /**
      * Método para prestar el libro
+     * Suma las veces que se ha prestado el libro
      */
     public void prestar(){
         vecesPrestado = vecesPrestado + 1;
@@ -129,7 +150,7 @@ public class Libro {
         
         detalles = detalles + " | Nºveces prestado: " + vecesPrestado;
         
-        if (esLibroDeTexto == true){
+        if (esLibroDeTexto){
             detalles = detalles + " | Libro de texto: Sí";
         }else{
             detalles = detalles + " | Libro de texto: No";
