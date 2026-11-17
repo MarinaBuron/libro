@@ -17,8 +17,6 @@ public class Libro {
      * @param autor: determina el autor del libro
      * @param titulo: determina el título del libro
      * @param paginas: determina las páginas del libro
-     * @param numeroReferencia: determina el número de referencia
-     * @param vecesPrestado: determina las veces que el libro se ha prestado
      * @param esLibroDeTexto: determina si el libro es de texto
      */
     public Libro(String autorLibro, String tituloLibro, int paginas, boolean libroTexto) {
@@ -32,6 +30,7 @@ public class Libro {
     
     /**
      * Método getter para autor
+     * @return el nombre del autor
      */
     public String getAutor(){
         return autor;
@@ -39,6 +38,7 @@ public class Libro {
     
     /**
      * Método getter para título
+     * @return el título del libro
      */
     public String getTitulo(){
         return titulo;
@@ -124,6 +124,7 @@ public class Libro {
     
     /**
      * Imprimiendo el nombre del autor
+     * Muestra el nombre del autor
      */
     public void imprimirAutor(){
         System.out.println("El autor del libro es: " + autor);
@@ -131,6 +132,7 @@ public class Libro {
     
     /**
      * Imprimiendo el título del libro
+     * Muestra el título del libro
      */
     public void imprimirTitulo(){
         System.out.println("El título del libro es: " + titulo);
@@ -138,6 +140,7 @@ public class Libro {
     
     /**
      * Método imprimir los detalles del libro
+     * Muestra todos los detalles del libro incluídos en el constructor
      */
     public void imprimirDetalles(){
         String detalles = "Título: " + titulo + " | Autor: " + autor + " | Páginas: " + numeroPaginas;
