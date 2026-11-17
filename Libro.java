@@ -14,10 +14,10 @@ public class Libro {
     private boolean esLibroDeTexto; //Determina si es un libro de texto 
 
     /**
-     * @param autor: determina el autor del libro
-     * @param titulo: determina el título del libro
+     * @param autorLibro: determina el autor del libro
+     * @param tituloLibro: determina el título del libro
      * @param paginas: determina las páginas del libro
-     * @param esLibroDeTexto: determina si el libro es de texto
+     * @param libroTexto: determina si el libro es de texto
      */
     public Libro(String autorLibro, String tituloLibro, int paginas, boolean libroTexto) {
         autor = autorLibro;
@@ -102,7 +102,7 @@ public class Libro {
     
     /**
      * Método setter para el número referencial del libro
-     * @param número de referencia a insertar al invocar el método
+     * @param numRef: número de referencia a insertar al invocar el método
      * Comprueba si el número de referencia es correcto
      */
     public void setNumeroReferencia(String numRef){
